@@ -16,7 +16,7 @@ public class PersonSaver {
         try(FileWriter fileWriter = new FileWriter(file, true)) {
             fileWriter.write(person.toString() + "\n");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new SavePersonException("Failed to save the user");
         }
 
     }
